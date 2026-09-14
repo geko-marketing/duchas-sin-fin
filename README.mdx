@@ -1,0 +1,359 @@
+import { motion } from "motion/react"
+import { Github, ExternalLink, Droplet, Zap, Leaf, Heart } from "lucide-react"
+
+export const metadata = {
+  title: "Ducha Sin Fin — La ducha del futuro, hoy",
+  description: "Sistema circular que limpia, filtra y recircula agua. Ahorra hasta 80% de agua y energía."
+}
+
+<div className="min-h-screen bg-gradient-to-br from-[#020b18] via-[#0b1f3b] to-[#020b18] text-white overflow-hidden">
+  {/* Hero Section */}
+  <section className="relative h-screen flex items-center justify-center px-6 overflow-hidden">
+    {/* Animated Background Elements */}
+    <motion.div 
+      className="absolute inset-0 opacity-30"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 0.3 }}
+      transition={{ duration: 1.2 }}
+    >
+      <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
+      <div className="absolute top-40 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
+      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
+    </motion.div>
+
+    {/* Content */}
+    <motion.div 
+      className="relative z-10 max-w-4xl text-center"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <motion.div
+        className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-8"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+      >
+        <Droplet className="w-5 h-5 text-cyan-400" />
+        <span className="text-sm font-medium text-cyan-300">Production-ready · Open Source</span>
+      </motion.div>
+
+      <motion.h1 
+        className="text-6xl md:text-7xl font-black mb-6 leading-tight"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+      >
+        Ducha <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">Sin Fin</span>
+      </motion.h1>
+
+      <motion.p 
+        className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.8 }}
+      >
+        Un sistema que limpia, filtra y recircula agua en un flujo continuo. 
+        <span className="text-cyan-400 font-semibold"> Ahorra hasta el 80% de agua y energía</span> sin renunciar a tu calidad de vida.
+      </motion.p>
+
+      <motion.div 
+        className="flex flex-col sm:flex-row gap-4 justify-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.8 }}
+      >
+        <a 
+          href="#features" 
+          className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-bold text-white hover:shadow-lg hover:shadow-cyan-500/50 transition-all hover:scale-105 flex items-center justify-center gap-2"
+        >
+          Explorar <ExternalLink className="w-5 h-5" />
+        </a>
+        <a 
+          href="https://github.com/mkcodev/ducha-sin-fin" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-8 py-4 bg-white/10 border border-white/20 rounded-full font-bold text-white hover:bg-white/20 transition-all flex items-center justify-center gap-2"
+        >
+          GitHub <Github className="w-5 h-5" />
+        </a>
+      </motion.div>
+    </motion.div>
+
+    {/* Scroll Indicator */}
+    <motion.div 
+      className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      animate={{ y: [0, 8, 0] }}
+      transition={{ duration: 2, repeat: Infinity }}
+    >
+      <div className="w-6 h-10 border-2 border-cyan-400/50 rounded-full flex items-start justify-center p-2">
+        <motion.div 
+          className="w-1.5 h-2 bg-cyan-400 rounded-full"
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
+      </div>
+    </motion.div>
+  </section>
+
+  {/* Features Section */}
+  <section id="features" className="relative py-20 px-6">
+    <div className="max-w-6xl mx-auto">
+      <motion.div 
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-5xl md:text-6xl font-black mb-6">Características Principales</h2>
+        <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          Tecnología innovadora que transforma el consumo de agua en el hogar
+        </p>
+      </motion.div>
+
+      <div className="grid md:grid-cols-3 gap-6">
+        {[
+          {
+            icon: Droplet,
+            title: "Ahorro de Agua",
+            description: "Sistema de filtración circular que recircula y reutiliza agua. Reduce consumo hasta 80%."
+          },
+          {
+            icon: Zap,
+            title: "Eficiencia Energética",
+            description: "Consumo eléctrico optimizado con bombas de bajo impacto y filtros inteligentes."
+          },
+          {
+            icon: Leaf,
+            title: "Sostenibilidad",
+            description: "Impacto ambiental mínimo. Materiales reciclables y degradables en todas sus componentes."
+          }
+        ].map((feature, i) => (
+          <motion.div
+            key={i}
+            className="p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/0 border border-cyan-500/20 hover:border-cyan-500/50 transition-all"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.15, duration: 0.6 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.05, y: -8 }}
+          >
+            <feature.icon className="w-12 h-12 text-cyan-400 mb-6" />
+            <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
+            <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Tech Stack Section */}
+  <section className="relative py-20 px-6 border-t border-white/10">
+    <div className="max-w-6xl mx-auto">
+      <motion.h2 
+        className="text-5xl font-black mb-12 text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        Tech Stack Moderno
+      </motion.h2>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {[
+          { name: "Next.js 16", icon: "⚡" },
+          { name: "React 19", icon: "⚛️" },
+          { name: "TypeScript", icon: "🔷" },
+          { name: "Tailwind CSS v4", icon: "🎨" },
+          { name: "Framer Motion", icon: "✨" },
+          { name: "Stripe", icon: "💳" },
+          { name: "Lucide Icons", icon: "🎯" },
+          { name: "App Router", icon: "📍" }
+        ].map((tech, i) => (
+          <motion.div
+            key={i}
+            className="p-6 rounded-xl bg-white/5 border border-white/10 text-center hover:border-cyan-500/30 transition-all"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: i * 0.05, duration: 0.5 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.1 }}
+          >
+            <div className="text-3xl mb-3">{tech.icon}</div>
+            <p className="font-semibold text-sm">{tech.name}</p>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Quick Start Section */}
+  <section className="relative py-20 px-6 border-t border-white/10">
+    <div className="max-w-4xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-5xl font-black mb-12">Quick Start</h2>
+
+        <div className="space-y-6">
+          <div className="p-6 rounded-xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30">
+            <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+              <span className="w-8 h-8 rounded-full bg-cyan-500/30 flex items-center justify-center text-sm font-bold">1</span>
+              Instalar dependencias
+            </h3>
+            <code className="block bg-black/50 p-4 rounded-lg text-cyan-400 font-mono text-sm overflow-x-auto">
+              npm install
+            </code>
+          </div>
+
+          <div className="p-6 rounded-xl bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-blue-500/30">
+            <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+              <span className="w-8 h-8 rounded-full bg-blue-500/30 flex items-center justify-center text-sm font-bold">2</span>
+              Variables de entorno
+            </h3>
+            <code className="block bg-black/50 p-4 rounded-lg text-blue-400 font-mono text-sm">
+              cp .env.example .env.local
+            </code>
+          </div>
+
+          <div className="p-6 rounded-xl bg-gradient-to-r from-teal-500/10 to-cyan-500/10 border border-teal-500/30">
+            <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+              <span className="w-8 h-8 rounded-full bg-teal-500/30 flex items-center justify-center text-sm font-bold">3</span>
+              Iniciar desarrollo
+            </h3>
+            <code className="block bg-black/50 p-4 rounded-lg text-teal-400 font-mono text-sm">
+              npm run dev
+            </code>
+          </div>
+        </div>
+
+        <p className="text-gray-400 mt-8">
+          Abre <span className="text-cyan-400 font-mono">http://localhost:3000</span> en tu navegador para ver el sitio.
+        </p>
+      </motion.div>
+    </div>
+  </section>
+
+  {/* Pages Section */}
+  <section className="relative py-20 px-6 border-t border-white/10">
+    <div className="max-w-4xl mx-auto">
+      <motion.h2 
+        className="text-5xl font-black mb-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        Páginas Completadas
+      </motion.h2>
+
+      <div className="grid md:grid-cols-2 gap-3">
+        {[
+          "Home", "Tecnología", "Ahorro", "Crowdfunding", 
+          "FAQ", "Contacto", "Sectores", "Sostenibilidad", 
+          "Blog", "Nosotros", "Donación éxito"
+        ].map((page, i) => (
+          <motion.div
+            key={i}
+            className="px-4 py-3 rounded-lg bg-white/5 border border-white/10 flex items-center gap-2"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: i * 0.03, duration: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <span className="text-cyan-400">✓</span>
+            <span>{page}</span>
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div
+        className="mt-8 p-4 rounded-lg bg-amber-500/10 border border-amber-500/30"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <p className="text-amber-300 flex items-start gap-2">
+          <span>⚠️</span>
+          <span><strong>Pendiente:</strong> Páginas legales (/privacidad, /cookies, /terminos)</span>
+        </p>
+      </motion.div>
+    </div>
+  </section>
+
+  {/* CTA Section */}
+  <section className="relative py-20 px-6 border-t border-white/10">
+    <div className="max-w-4xl mx-auto text-center">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-5xl font-black mb-6">¿Listo para empezar?</h2>
+        <p className="text-xl text-gray-400 mb-8">
+          Clona el repositorio y crea el futuro del agua con nosotros
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="https://github.com/mkcodev/ducha-sin-fin" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-bold text-white hover:shadow-lg hover:shadow-cyan-500/50 transition-all inline-flex items-center justify-center gap-2"
+          >
+            <Github className="w-5 h-5" /> GitHub Repository
+          </a>
+          <a 
+            href="#" 
+            className="px-8 py-4 bg-white/10 border border-white/20 rounded-full font-bold text-white hover:bg-white/20 transition-all inline-flex items-center justify-center gap-2"
+          >
+            <Heart className="w-5 h-5" /> Contribuir
+          </a>
+        </div>
+      </motion.div>
+    </div>
+  </section>
+
+  {/* Footer */}
+  <footer className="relative py-12 px-6 border-t border-white/10">
+    <div className="max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <h3 className="font-bold text-lg mb-4">Ducha Sin Fin</h3>
+          <p className="text-gray-400 text-sm">Transformando el futuro del agua</p>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-4">Recursos</h4>
+          <ul className="space-y-2 text-sm text-gray-400">
+            <li><a href="https://github.com/mkcodev/ducha-sin-fin" className="hover:text-cyan-400 transition">GitHub</a></li>
+            <li><a href="https://github.com/mkcodev/ducha-sin-fin/issues" className="hover:text-cyan-400 transition">Issues</a></li>
+            <li><a href="LICENSE" className="hover:text-cyan-400 transition">Licencia</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-4">Legal</h4>
+          <ul className="space-y-2 text-sm text-gray-400">
+            <li><a href="#" className="hover:text-cyan-400 transition">Privacidad</a></li>
+            <li><a href="#" className="hover:text-cyan-400 transition">Términos</a></li>
+            <li><a href="#" className="hover:text-cyan-400 transition">Cookies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-4">Contacto</h4>
+          <p className="text-sm text-gray-400">mikelrow00@gmail.com</p>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
+        <p>© 2026 Ducha Sin Fin. Licenciado bajo MIT. Hecho con <Heart className="w-4 h-4 inline text-red-500" /></p>
+      </div>
+    </div>
+  </footer>
+</div>
