@@ -3,7 +3,6 @@ import { CrowdfundingHero } from "@/components/crowdfunding/CrowdfundingHero";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ProjectInfo } from "@/components/crowdfunding/ProjectInfo";
-import { RewardTiers } from "@/components/crowdfunding/RewardTiers";
 
 export const metadata: Metadata = {
   title: "Apoya la Primera Ducha Circular de España",
@@ -20,7 +19,6 @@ export default function CrowdfundingPage() {
       <Header />
       <main className="flex-1">
         <CrowdfundingHero />
-        <RewardTiers />
         <ProjectInfo />
       </main>
       <Footer />
